@@ -1,0 +1,12 @@
+C:\RiderProjects\WPFFourthLaboratory\WPFFourthLaboratory.Core\bin\Debug\WPFFourthLaboratory.Core.dll
+C:\RiderProjects\WPFFourthLaboratory\WPFFourthLaboratory.Core\bin\Debug\WPFFourthLaboratory.Core.pdb
+C:\RiderProjects\WPFFourthLaboratory\WPFFourthLaboratory.Core\obj\Debug\WPFFourthLaboratory.Core.csproj.AssemblyReference.cache
+C:\RiderProjects\WPFFourthLaboratory\WPFFourthLaboratory.Core\obj\Debug\WPFFourthLaboratory.Core.csproj.CoreCompileInputs.cache
+C:\RiderProjects\WPFFourthLaboratory\WPFFourthLaboratory.Core\obj\Debug\WPFFourthLaboratory.Core.dll
+C:\RiderProjects\WPFFourthLaboratory\WPFFourthLaboratory.Core\obj\Debug\WPFFourthLaboratory.Core.pdb
+C:\JetBrainsProjects\RiderProjects\Education\RPM\RPM.WPFFourthLaboratory\WPFFourthLaboratory.Core\bin\Debug\WPFFourthLaboratory.Core.dll
+C:\JetBrainsProjects\RiderProjects\Education\RPM\RPM.WPFFourthLaboratory\WPFFourthLaboratory.Core\bin\Debug\WPFFourthLaboratory.Core.pdb
+C:\JetBrainsProjects\RiderProjects\Education\RPM\RPM.WPFFourthLaboratory\WPFFourthLaboratory.Core\obj\Debug\WPFFourthLaboratory.Core.csproj.AssemblyReference.cache
+C:\JetBrainsProjects\RiderProjects\Education\RPM\RPM.WPFFourthLaboratory\WPFFourthLaboratory.Core\obj\Debug\WPFFourthLaboratory.Core.csproj.CoreCompileInputs.cache
+C:\JetBrainsProjects\RiderProjects\Education\RPM\RPM.WPFFourthLaboratory\WPFFourthLaboratory.Core\obj\Debug\WPFFourthLaboratory.Core.dll
+C:\JetBrainsProjects\RiderProjects\Education\RPM\RPM.WPFFourthLaboratory\WPFFourthLaboratory.Core\obj\Debug\WPFFourthLaboratory.Core.pdb
