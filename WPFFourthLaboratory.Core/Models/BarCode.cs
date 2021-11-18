@@ -16,7 +16,7 @@ namespace WPFFourthLaboratory.DAL.Models
             {
                 $"{Code[0]}",
                 $"{Code.Substring(1, 6)}",
-                $"{Code.Substring(6, 6)}"
+                $"{Code.Substring(7, 6)}"
             };
     }
 }

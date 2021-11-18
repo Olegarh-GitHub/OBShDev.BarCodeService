@@ -53,6 +53,20 @@ namespace WPFFourthLaboratory.DAL.Helpers
             }
         };
 
+        private readonly Dictionary<int, int[]> _blockMap = new Dictionary<int, int[]>()
+        {
+            {0, new []{1, 1, 1, 1, 1, 1}},
+            {1, new []{1, 1, 2, 1, 2, 2}},
+            {2, new []{1, 1, 2, 2, 1, 2}},
+            {3, new []{1, 1, 2, 2, 2, 1}},
+            {4, new []{1, 2, 1, 1, 2, 2}},
+            {5, new []{1, 2, 2, 1, 1, 2}},
+            {6, new []{1, 2, 2, 2, 1, 1}},
+            {7, new []{1, 2, 1, 2, 1, 2}},
+            {8, new []{1, 2, 1, 2, 2, 1}},
+            {9, new []{1, 2, 2, 1, 2, 1}},
+        };
+
         public int[] GetWidths(int blockNumber, int digit)
         {
             if (!_map.ContainsKey(blockNumber))
@@ -61,6 +75,11 @@ namespace WPFFourthLaboratory.DAL.Helpers
             }
 
             return !_map[blockNumber].ContainsKey(digit) ? default : _map[blockNumber][digit];
+        }
+
+        public int[] GetBlock(int firstDigit)
+        {
+            return !_blockMap.ContainsKey(firstDigit) ? default : _blockMap[firstDigit];
         }
     }
 }
