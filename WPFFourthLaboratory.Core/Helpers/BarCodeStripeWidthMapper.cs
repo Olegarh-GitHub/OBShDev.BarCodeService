@@ -2,7 +2,7 @@
 
 namespace WPFFourthLaboratory.DAL.Helpers
 {
-    public class BarCodeStripeWidthMapper
+    public class BarCodeStripeWidthMapper // TODO make static
     {
         private readonly Dictionary<int, Dictionary<int, int[]>> _map = new Dictionary<int, Dictionary<int, int[]>>()
         {

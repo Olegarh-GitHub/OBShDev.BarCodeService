@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Collections.Generic;
 using WPFFourthLaboratory.DAL.Helpers;
 using WPFFourthLaboratory.DAL.Models;
 using WPFFourthLaboratory.DAL.Services;
@@ -31,7 +28,7 @@ namespace WPFFourthLaboratory.Services
             return new BarCode() {Code = code};
         }
 
-        private int GetCheckDigit(string code)
+        private static int GetCheckDigit(string code)
         {
             var oddSum = 0;
             var evenSum = 0;
@@ -48,6 +45,7 @@ namespace WPFFourthLaboratory.Services
                     oddSum += digit;
                 }
             }
+
             evenSum *= 3;
             var result = oddSum + evenSum;
             var resultDigit = result.ToString()[result.ToString().Length - 1];
