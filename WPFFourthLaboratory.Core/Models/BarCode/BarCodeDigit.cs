@@ -1,18 +1,16 @@
 ﻿using System.Windows.Media;
 using WPFFourthLaboratory.DAL.Helpers;
 
-namespace WPFFourthLaboratory.DAL.Models.Base
+namespace WPFFourthLaboratory.DAL.Models.BarCode
 {
     public class BarCodeDigit : BarCodeModule
     {
-        private static readonly BarCodeStripeWidthMapper Mapper = new BarCodeStripeWidthMapper();
-        private int _blockNumber;
-
-
+        private readonly int _blockNumber;
+        
         public BarCodeDigit(int digit, int blockNumber)
         {
             _blockNumber = blockNumber;
-            var widths = Mapper.GetWidths(blockNumber, digit);
+            var widths = BarCodeStripeWidthMapper.GetWidths(blockNumber, digit);
             for (var i = 0; i < widths.Length; i++)
             {
                 var color = GetColor(i);

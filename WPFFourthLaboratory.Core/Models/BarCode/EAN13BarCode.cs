@@ -1,14 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using WPFFourthLaboratory.DAL.Models.Base;
+using WPFFourthLaboratory.DAL.Helpers;
 
-namespace WPFFourthLaboratory.DAL.Models
+namespace WPFFourthLaboratory.DAL.Models.BarCode
 {
-    // ReSharper disable once InconsistentNaming
-    public class EAN13BarCode : Base.BarCode
+    public class EAN13BarCode : BarCode.Base.BarCode
     {
-        public int FirstDigit => int.Parse(Code[0].ToString());
+        private int FirstDigit => int.Parse(Code[0].ToString());
 
         public EAN13BarCode(string code) 
         {
@@ -24,25 +23,16 @@ namespace WPFFourthLaboratory.DAL.Models
             var codeBlocks = GetCodeBlocks();
             return $"{FirstDigit} {string.Join("", codeBlocks[0])} {string.Join("", codeBlocks[1])}";
         }
-
-        private int GetBlockNumber(int position)
-        {
-            if (position >= 6)
-                return 3;
-
-            var blocks = Mapper.GetBlock(FirstDigit);
-            return blocks[position];
-        }
-
-        public override List<BarCodeModule> GetModules()
+        
+        protected override List<BarCodeModule> GetModules()
         {
             var codeBlocks = GetCodeBlocks();
             var modules = new List<BarCodeModule>();
 
             var position = 0;
-            
-            modules.Add(BarCodeModule.GetEmptyZone());
-            modules.Add(BarCodeModule.GetGenericSeparator());
+
+            modules.Add(BarCodeSharedModules.GetEmptyZone());
+            modules.Add(BarCodeSharedModules.GetGenericSeparator());
             
             foreach (var codeBlock in codeBlocks)
             {
@@ -53,18 +43,26 @@ namespace WPFFourthLaboratory.DAL.Models
                     var barCodeDigit = new BarCodeDigit(digit, blockNumber);
                     modules.Add(barCodeDigit);
                 }
-                modules.Add(BarCodeModule.GetMiddleSeparator());
+                modules.Add(BarCodeSharedModules.GetMiddleSeparator());
             }
             modules.RemoveAt(modules.Count - 1); // pop last middle separator
             
-            modules.Add(BarCodeModule.GetGenericSeparator());
-            modules.Add(BarCodeModule.GetEmptyZone());
+            modules.Add(BarCodeSharedModules.GetGenericSeparator());
+            modules.Add(BarCodeSharedModules.GetEmptyZone());
 
             return modules;
         }
 
+        private int GetBlockNumber(int position)
+        {
+            if (position >= 6)
+                return 3;
 
-        public List<int[]> GetCodeBlocks()
+            var blocks = BarCodeStripeWidthMapper.GetBlock(FirstDigit);
+            return blocks[position];
+        }
+
+        private List<int[]> GetCodeBlocks()
         {
             return new List<int[]>()
             {

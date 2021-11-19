@@ -1,40 +1,11 @@
 ﻿using System.Collections.Generic;
-using System.Windows.Controls;
 using System.Windows.Media;
+using WPFFourthLaboratory.DAL.Models.BarCode;
 
-namespace WPFFourthLaboratory.DAL.Models.Base
+namespace WPFFourthLaboratory.DAL.Helpers
 {
-    public class BarCodeModule : StackPanel
+    public static class BarCodeSharedModules
     {
-        protected List<BarCodeStripe> Stripes;
-
-        public BarCodeModule()
-        {
-            Orientation = Orientation.Horizontal;
-            Stripes = new List<BarCodeStripe>();
-        }
-
-        public BarCodeModule(List<BarCodeStripe> stripes)
-        {
-            Orientation = Orientation.Horizontal;
-            Stripes = stripes;
-            Draw();
-        }
-
-        protected void AddStripe(BarCodeStripe stripe)
-        {
-            Stripes.Add(stripe);
-        }
-
-        protected void Draw()
-        {
-            Children.Clear();
-            foreach (var stripe in Stripes)
-            {
-                Children.Add(stripe);
-            }
-        }
-
         public static BarCodeModule GetGenericSeparator()
         {
             var stripes = new List<BarCodeStripe>()

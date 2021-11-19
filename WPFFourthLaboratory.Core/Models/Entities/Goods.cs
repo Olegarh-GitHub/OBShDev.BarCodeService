@@ -1,10 +1,6 @@
-﻿using System;
-using System.Text;
-using WPFFourthLaboratory.DAL.Interfaces;
-
-namespace WPFFourthLaboratory.DAL.Models
+﻿namespace WPFFourthLaboratory.DAL.Models.Entities
 {
-    public class Goods : IEntity
+    public class Goods
     {
         public int Id { get; set; }
         public string Name { get; set; }

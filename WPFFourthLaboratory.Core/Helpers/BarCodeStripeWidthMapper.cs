@@ -2,9 +2,9 @@
 
 namespace WPFFourthLaboratory.DAL.Helpers
 {
-    public class BarCodeStripeWidthMapper // TODO make static
+    public static class BarCodeStripeWidthMapper // TODO make block Enums
     {
-        private readonly Dictionary<int, Dictionary<int, int[]>> _map = new Dictionary<int, Dictionary<int, int[]>>()
+        private static readonly Dictionary<int, Dictionary<int, int[]>> Map = new Dictionary<int, Dictionary<int, int[]>>()
         {
             {
                 1, new Dictionary<int, int[]>()
@@ -53,7 +53,7 @@ namespace WPFFourthLaboratory.DAL.Helpers
             }
         };
 
-        private readonly Dictionary<int, int[]> _blockMap = new Dictionary<int, int[]>()
+        private static readonly Dictionary<int, int[]> BlockMap = new Dictionary<int, int[]>()
         {
             {0, new []{1, 1, 1, 1, 1, 1}},
             {1, new []{1, 1, 2, 1, 2, 2}},
@@ -67,19 +67,19 @@ namespace WPFFourthLaboratory.DAL.Helpers
             {9, new []{1, 2, 2, 1, 2, 1}},
         };
 
-        public int[] GetWidths(int blockNumber, int digit)
+        public static int[] GetWidths(int blockNumber, int digit)
         {
-            if (!_map.ContainsKey(blockNumber))
+            if (!Map.ContainsKey(blockNumber))
             {
                 return default;
             }
 
-            return !_map[blockNumber].ContainsKey(digit) ? default : _map[blockNumber][digit];
+            return !Map[blockNumber].ContainsKey(digit) ? default : Map[blockNumber][digit];
         }
 
-        public int[] GetBlock(int firstDigit)
+        public static int[] GetBlock(int firstDigit)
         {
-            return !_blockMap.ContainsKey(firstDigit) ? default : _blockMap[firstDigit];
+            return !BlockMap.ContainsKey(firstDigit) ? default : BlockMap[firstDigit];
         }
     }
 }
