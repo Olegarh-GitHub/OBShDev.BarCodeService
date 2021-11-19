@@ -16,5 +16,14 @@ namespace WPFFourthLaboratory.DAL.Models.Base
         public List<int[]> Blocks { get; set; }
         protected readonly BarCodeStripeWidthMapper Mapper = new BarCodeStripeWidthMapper();
         public abstract List<BarCodeModule> GetModules();
+        
+        protected void Draw()
+        {
+            var modules = GetModules();
+            foreach (var module in modules)
+            {
+                Children.Add(module);
+            }
+        }
     }
 }

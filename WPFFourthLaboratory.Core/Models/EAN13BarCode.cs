@@ -63,14 +63,6 @@ namespace WPFFourthLaboratory.DAL.Models
             return modules;
         }
 
-        private void Draw()
-        {
-            var modules = GetModules();
-            foreach (var module in modules)
-            {
-                Children.Add(module);
-            }
-        }
 
         public List<int[]> GetCodeBlocks()
         {
