@@ -8,6 +8,15 @@
         Title="MainWindow" Height="350" Width="525">
     <Grid x:Name="Grid"
           Background="Bisque">
-        
+        <Canvas
+            x:Name="MainCanvas">
+            <DockPanel
+                x:Name="ProducerDockPanel"
+                Dock="Top">
+                <Button>
+                    fff
+                </Button>
+            </DockPanel>
+        </Canvas>
     </Grid>
 </Window>

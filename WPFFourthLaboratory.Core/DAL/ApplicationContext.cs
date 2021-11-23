@@ -10,11 +10,5 @@ namespace WPFFourthLaboratory.DAL.DAL
         public DbSet<Producer> Producers { get; set; }
 
         public ApplicationContext() : base("Goods") { }
-        
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            //Database.SetInitializer<ApplicationContext>(null);
-            base.OnModelCreating(modelBuilder);
-        }
     }
 }

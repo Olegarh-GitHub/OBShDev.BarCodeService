@@ -52,6 +52,11 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="DAL\ApplicationContext.cs" />
+        <Compile Include="DAL\CountryRepository.cs" />
+        <Compile Include="DAL\GoodsRepository.cs" />
+        <Compile Include="DAL\ProducerRepository.cs" />
+        <Compile Include="DAL\Repository.cs" />
+        <Compile Include="DAL\RepositoryCreator.cs" />
         <Compile Include="Helpers\BarCodeSharedModules.cs" />
         <Compile Include="Helpers\BarCodeStripeWidthMapper.cs" />
         <Compile Include="Helpers\GoodsExtension.cs" />
