@@ -61,11 +61,13 @@
         <Compile Include="Helpers\BarCodeStripeWidthMapper.cs" />
         <Compile Include="Helpers\GoodsExtension.cs" />
         <Compile Include="Interfaces\IBarCodeService.cs" />
+        <Compile Include="Interfaces\IRepository.cs" />
         <Compile Include="Models\BarCode\BarCodeDigit.cs" />
         <Compile Include="Models\BarCode\BarCodeModule.cs" />
         <Compile Include="Models\BarCode\BarCodeStripe.cs" />
         <Compile Include="Models\BarCode\Base\BarCode.cs" />
         <Compile Include="Models\BarCode\EAN13BarCode.cs" />
+        <Compile Include="Models\Entities\Base\Entity.cs" />
         <Compile Include="Models\Entities\Country.cs" />
         <Compile Include="Models\Entities\Product.cs" />
         <Compile Include="Models\Entities\Producer.cs" />
