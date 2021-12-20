@@ -4,19 +4,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFFourthLaboratory"
+        xmlns:base="clr-namespace:WPFFourthLaboratory.DAL.Models.BarCode.Base;assembly=WPFFourthLaboratory.Core"
+        xmlns:barCode="clr-namespace:WPFFourthLaboratory.DAL.Models.BarCode;assembly=WPFFourthLaboratory.Core"
         mc:Ignorable="d"
         Title="MainWindow" Height="350" Width="525">
     <Grid x:Name="Grid"
-          Background="Bisque">
-        <Canvas
-            x:Name="MainCanvas">
-            <DockPanel
-                x:Name="ProducerDockPanel"
-                Dock="Top">
-                <Button>
-                    fff
-                </Button>
-            </DockPanel>
-        </Canvas>
+          Background="Red">
+        <DockPanel
+            x:Name="ProducerDockPanel"
+            Dock="Top">
+            <ComboBox Height="30" Width="150" DockPanel.Dock="Top"
+                      x:Name="ProductComboBox" SelectionChanged="ProductComboBox_OnSelectionChanged">
+            </ComboBox>
+            <Canvas DockPanel.Dock="Top" Margin="10 10 10 0"
+                    x:Name="BarCodePanel"
+                    Height="230"
+                    >
+            </Canvas>
+            <TextBlock DockPanel.Dock="Top" Height="30" x:Name="BarCodeTextBlock"
+                       FontSize="20" Foreground="White"
+                       HorizontalAlignment="Center"></TextBlock>
+        </DockPanel>
     </Grid>
 </Window>

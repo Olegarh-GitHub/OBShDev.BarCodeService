@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Windows;
 using System.Windows.Controls;
 
 namespace WPFFourthLaboratory.DAL.Models.BarCode.Base
@@ -8,6 +9,7 @@ namespace WPFFourthLaboratory.DAL.Models.BarCode.Base
         protected BarCode()
         {
             Orientation = Orientation.Horizontal;
+            HorizontalAlignment = HorizontalAlignment.Center;
         }
 
         protected string Code { get; set; }

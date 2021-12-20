@@ -24,25 +24,40 @@ namespace WPFFourthLaboratory
     public partial class MainWindow
     {
         private readonly RepositoryCreator _repositoryCreator = new RepositoryCreator();
+        private readonly IBarCodeService _barCodeService;
 
         public MainWindow()
         {
             InitializeComponent();
-
-            var producer = new Producer(690641, "ПАО \"Нижнекамск-Нефтехим\"");
-
-            producer = _repositoryCreator.ProducerRepository.Create(producer);
-            var country = _repositoryCreator.CountryRepository.Read().FirstOrDefault();
             
-            var goods = new Goods("Покрышки от КамАЗ-5320", "Покрышки резиновые КАМА от грузовика КамАЗ", country, producer);
-            _repositoryCreator.GoodsRepository.Create(goods);
+            // var code = new EAN13BarCodeService().GenerateBarCode(); //"978020137962"
+            //
+            // var barCode = new EAN13BarCode(code);
+            // Grid.Children.Add(barCode);
+            FillProductList();
+            _barCodeService = new EAN13BarCodeService();
+        }
 
-            var readedGoods = _repositoryCreator.GoodsRepository.Read().FirstOrDefault();
-            
-            var code = new EAN13BarCodeService().GenerateBarCode(readedGoods); //"978020137962"
-            
+        private void FillProductList()
+        {
+            var products = _repositoryCreator.GoodsRepository.Read().ToList();
+            ProductComboBox.ItemsSource = products;
+        }
+
+        private void ProductComboBox_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var product = (Product) ProductComboBox.SelectedItem;
+            DrawBarCode(product);
+        }
+
+        private void DrawBarCode(Product product)
+        {
+            BarCodeStripe.StripeWidth = 3;
+            var code = _barCodeService.GenerateBarCode(product);
             var barCode = new EAN13BarCode(code);
-            Grid.Children.Add(barCode);
+            BarCodePanel.Children.Clear();
+            BarCodePanel.Children.Add(barCode);
+            BarCodeTextBlock.Text = barCode.ToString();
         }
     }
 }

@@ -6,7 +6,7 @@ namespace WPFFourthLaboratory.DAL.DAL
     public class ApplicationContext : DbContext
     {
         public DbSet<Country> Countries { get; set; }
-        public DbSet<Goods> Goods { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<Producer> Producers { get; set; }
 
         public ApplicationContext() : base("Goods") { }

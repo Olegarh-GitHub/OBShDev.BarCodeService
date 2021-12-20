@@ -7,11 +7,11 @@ namespace WPFFourthLaboratory.DAL.Services
 {
     public class EAN13BarCodeService : IBarCodeService
     {
-        public string GenerateBarCode(Goods goods)
+        public string GenerateBarCode(Product product)
         {
-            var result = $"{goods.Country.Code}";
-            result += goods.Producer.Code;
-            result += goods.Code;
+            var result = $"{product.Country.Code}";
+            result += product.Producer.Code;
+            result += product.Code;
             
             return GenerateBarCode(result);
         }

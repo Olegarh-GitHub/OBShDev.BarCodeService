@@ -6,7 +6,7 @@ namespace WPFFourthLaboratory.DAL.Interfaces
 {
     public interface IBarCodeService
     {
-        string GenerateBarCode(Goods goods);
+        string GenerateBarCode(Product product);
         string GenerateBarCode(string code);
         bool CheckBarCode(string code);
     }

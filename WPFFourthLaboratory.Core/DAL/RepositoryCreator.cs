@@ -9,13 +9,13 @@ namespace WPFFourthLaboratory.DAL.DAL
         private readonly ApplicationContext _context = new ApplicationContext();
 
         public IRepository<Country> CountryRepository { get; }
-        public IRepository<Goods> GoodsRepository { get; }
+        public IRepository<Product> GoodsRepository { get; }
         public IRepository<Producer> ProducerRepository { get; }
 
         public RepositoryCreator()
         {
             CountryRepository = new CountryRepository(_context);
-            GoodsRepository = new GoodsRepository(_context);
+            GoodsRepository = new ProductRepository(_context);
             ProducerRepository = new ProducerRepository(_context);
         }
     }

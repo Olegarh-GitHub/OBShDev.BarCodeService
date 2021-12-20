@@ -19,7 +19,7 @@ namespace WPFFourthLaboratory.DAL.DAL
         
         public virtual IQueryable<T> Read()
         {
-            return _dbSet.AsNoTracking().AsQueryable();
+            return _dbSet.AsQueryable();
         }
 
         public virtual T Create(T obj)
